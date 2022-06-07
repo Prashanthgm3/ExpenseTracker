@@ -2,7 +2,7 @@ const express = require("express");
 const dbConnect= require("./config/dbConnect")
 const { registerUser } = require("./controllers/users/usersCtrl");
 const userRoute = require("./controllers/users/usersRoute");
-const { errorHandler } = require("./middlewares/errorMiddleware");
+const { errorHandler, notFound} = require("./middlewares/errorMiddleware");
 
 
 const app = express();
@@ -17,11 +17,13 @@ dbConnect();
 
 //routes
 
-app.use("/",userRoute);
+app.use("/api/users",userRoute);
 
 
 //Error
+app.use(notFound);
 app.use(errorHandler);
+
 
  
 module.exports=app;
