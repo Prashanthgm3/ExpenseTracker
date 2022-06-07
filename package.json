@@ -1,0 +1,13 @@
+{
+  "name": "expensetracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "server": "npm run watch --prefix server",
+    "client": "npm run watch --prefix client",
+    "watch": "npm run server & npm run client"
+  },
+  "author": "",
+  "license": "ISC"
+}
